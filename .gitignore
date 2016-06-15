@@ -39,3 +39,10 @@ dist
 # Codekit (Mac)
 .codekit-cache
 .config-codekit
+
+
+
+# Jekyll
+_site
+.sass-cache
+.jekyll-metadata
