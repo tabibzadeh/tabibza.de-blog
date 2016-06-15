@@ -1,0 +1,25 @@
+{
+  "name": "tabibzblog",
+  "version": "0.1.0",
+  "authors": [
+    "Ali Tabibzadeh <ali@tabibza.de>"
+  ],
+  "main": "Gruntfile.js",
+  "license": "NONE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower",
+    "test",
+    "tests",
+    "bower_components",
+    "bower/"
+  ],
+  "dependencies": {
+      "foundation-sites": "~6.1.2",
+      "material-design-iconic-font": "~2.2.0"
+  },
+  "homepage": "https://github.com/tabibzadeh/tabibzblog",
+  "description": "Ma blog ma problems",
+  "private": true
+}

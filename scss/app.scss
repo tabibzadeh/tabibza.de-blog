@@ -1,0 +1,59 @@
+//
+// UTMOST REQUIRED COMPONENTS AND PACKAGES
+//
+
+
+	// Digiavu High Periority
+
+	@import "base/colors";
+	@import "base/utils";
+
+	// ----
+
+
+	// Foundation
+
+	@import "base/foundation-settings";
+	@import "../bower/foundation-sites/scss/foundation";
+	@include foundation-everything;
+
+	// ----
+
+    // Base
+
+	@import "base/fonts";
+	@import "base/layout";
+	@import "base/mixins";
+	@import "base/options";
+
+	// ----
+
+	// Material Design Iconic Font
+
+	@import "base/mdi-variables";
+	@import "../bower/material-design-iconic-font/scss/path";
+	@import "../bower/material-design-iconic-font/scss/core";
+	@import "../bower/material-design-iconic-font/scss/sizes";
+	@import "../bower/material-design-iconic-font/scss/fixed-width";
+	@import "../bower/material-design-iconic-font/scss/list";
+	@import "../bower/material-design-iconic-font/scss/border";
+	@import "../bower/material-design-iconic-font/scss/pulled";
+	@import "../bower/material-design-iconic-font/scss/spinned";
+	@import "../bower/material-design-iconic-font/scss/rotated";
+	@import "../bower/material-design-iconic-font/scss/stacked";
+	@import "../bower/material-design-iconic-font/scss/icons";
+	@import "../bower/material-design-iconic-font/scss/aliases";
+
+	// ----
+
+
+
+    // Components
+
+    // ----
+
+
+
+    // Pages
+
+    // ----

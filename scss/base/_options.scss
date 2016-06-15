@@ -1,0 +1,266 @@
+// Radiuses & Circles
+
+%radius {
+	border-radius: 3px;
+}
+
+%no-radius {
+	border-radius: 0;
+}
+
+%rounded {
+	border-radius: 1000px;
+}
+
+//
+
+// Highlight Selection
+
+::selection {
+	background: $highlight-selection-background-color;
+	color: $highlight-selection-text-color;
+}
+::-moz-selection {
+	background: $highlight-selection-background-color;
+	color: $highlight-selection-text-color;
+}
+
+// ----
+
+// PlaceHolders
+
+::-webkit-input-placeholder {
+	font-family: "IranSans";
+	direction: rtl;
+}
+
+:-moz-placeholder {
+	font-family: "IranSans";
+  	direction: rtl;
+}
+
+::-moz-placeholder {
+  	font-family: "IranSans";
+  	direction: rtl;
+}
+
+:-ms-input-placeholder {
+  	font-family: "IranSans";
+  	direction: rtl;
+}
+
+// ----
+
+
+// Forms & Inputs
+input[type="text"], [type="email"], [type="password"], [type="url"] {
+	outline: 0;
+	padding: .5em;
+	border: 1px solid $clr-grey-300;
+	background-color: $clr-grey-100;
+	color: darken($clr-grey-300, 20%);
+	@extend %radius;
+
+	&[value], &[placeholder] {
+		@include _transition(all .4s);
+	}
+
+	&:hover, &:focus, &:active {
+		border-color: darken($clr-grey-300, 20%);
+		box-shadow: none;
+		text-shadow: none;
+	}
+
+	&:focus, &:active {
+		background-color: lighten($clr-grey-100, 10%);
+	}
+}
+
+
+
+// ----
+
+
+// Images
+
+// ----
+
+
+// Lists
+
+ul {
+	margin: 0;
+
+	li {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.flat {
+		display: table;
+		list-style-type: none;
+
+		li {
+			float: right;
+		}
+	}
+
+	&.bul {
+		list-style-type: disc;
+	}
+
+	&.nobul {
+		list-style-type: none;
+	}
+}
+
+// ----
+
+
+// Transitions
+
+a {
+	transition: all 0.4s;
+}
+
+// ----
+
+
+// Paragraphs
+
+p {
+}
+
+// ----
+
+
+// Icons
+
+.icon {
+	position: relative;
+}
+
+// ----
+
+
+// Types & Texts $ Titles
+
+.bold {
+	font-weight: bold;
+}
+
+.line-through {
+	text-decoration: line-through;
+}
+
+hr {
+	&.tiny {
+		width: 5rem;
+		margin: 0 auto;
+	}
+}
+
+// ----
+
+
+// Showable / Hidable
+
+.hide {
+	display: none !important;
+}
+
+.hide-visibility {
+	visibility: hidden !important;
+}
+
+.hide-text {
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.show-block {
+	display: block !important;
+}
+
+.show-inline-block {
+	display: inline-block;
+}
+
+.overflow-visible {
+	overflow: visible !important;
+}
+
+// ----
+
+
+// Circles & Radiuses
+
+.circle {
+
+}
+
+.radius {
+
+}
+
+// ----
+
+
+// Headings Opts
+
+h1, h2, h3, h4, h5, h6 {
+	cursor: default;
+	font-weight: bold;
+	@include _transition(all .4s);
+
+	a & {
+		cursor: pointer !important;
+	}
+
+	&.red {
+		color: $clr-red-300;
+	}
+
+	&.green {
+		color: $clr-green-500;
+	}
+
+	&.lorange {
+		color: $clr-cc-15;
+	}
+
+	&.orange {
+		color: $clr-cc-20;
+	}
+
+	&.yellow {
+		color: $clr-yellow-500;
+	}
+
+	&.white {
+		color: $clr-white;
+
+		i {
+			color: $clr-white;
+		}
+	}
+}
+
+// ----
+
+
+// Blurred
+
+.blurred {
+	@include blurred(10px);
+}
+
+// ----
+
+
+// CURSOR OPTIONS
+
+
+// ---

@@ -1,0 +1,253 @@
+// Text Color
+@mixin text-color($color) {
+
+}
+
+// ----
+
+
+// CSS Triangles
+@mixin triangle($x, $y, $z, $width, $color) {
+    width: 0;
+    height: 0;
+    border-#{$x}: $width solid transparent;
+    border-#{$y}: $width solid transparent;
+    border-#{$z}: $width solid $color;
+}
+/*
+* Up: left, right, bottom
+* Right: top, bottom, left
+* Down: left, right, top
+* Left: top, bottom, right
+ */
+
+
+ // CSS Half-triangles
+ @mixin halftri($x, $y, $width, $color) {
+     width: 0;
+     height: 0;
+     border-#{$x}: $width solid $color;
+     border-#{$y}: $width solid transparent;
+ }
+ /*
+* top-left: top, right
+* top-right: top, left
+* bottom-left: bottom, right
+* bottom-right: bottom, left
+ */
+
+
+ // Gradient OVERLAY
+ @mixin reverseGradientOverlay($color, $op) {
+     background: $color;
+     background: -moz-linear-gradient(top, rgba($color, $op) 0%, rgba($color, 0) 100%); // FF3.6+
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($color, 0.7)), color-stop(100%,rgba($color, 0))); // Chrome,Safari4+
+     background: -webkit-linear-gradient(top, rgba($color, $op) 0%,rgba($color, 0) 100%); // Chrome10+,Safari5.1+
+     background: -o-linear-gradient(top, rgba($color, $op) 0%,rgba($color, 0) 100%); // Opera 11.10+
+     background: -ms-linear-gradient(top, rgba($color, $op) 0%,rgba($color, 0) 100%); // IE10+
+     background: linear-gradient(to bottom, rgba($color, $op) 0%,rgba($color, 0) 100%); // W3C
+ }
+
+
+ // Gradient OVERLAY
+ @mixin gradientOverlay($color, $op) {
+    // background: -ms-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 100%);
+    // background: -moz-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 100%);
+    // background: -o-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 100%);
+    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba($color, 0)), color-stop(100, rgba($color, $op)));
+    // background: -webkit-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 100%);
+    // background: linear-gradient(to bottom, rgba($color, 0) 0%, rgba($color, $op) 100%);
+
+//     background: rgba($color, 0);
+// background: -moz-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 54%, rgba($color, $op) 100%);
+// background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba($color, 0)), color-stop(54%, rgba($color, $op)), color-stop(100%, rgba($color, $op)));
+// background: -webkit-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 54%, rgba($color, $op) 100%);
+// background: -o-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 54%, rgba($color, $op) 100%);
+// background: -ms-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 54%, rgba($color, $op) 100%);
+// background: linear-gradient(to bottom, rgba($color, 0) 0%, rgba($color, $op) 54%, rgba($color, $op) 100%);
+
+background: rgba($color, 0);
+background: -moz-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 41%, rgba(26,26,26,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba($color, 0)), color-stop(41%, rgba($color, $op)), color-stop(100%, rgba(26,26,26,1)));
+background: -webkit-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 41%, rgba(26,26,26,1) 100%);
+background: -o-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 41%, rgba(26,26,26,1) 100%);
+background: -ms-linear-gradient(top, rgba($color, 0) 0%, rgba($color, $op) 41%, rgba(26,26,26,1) 100%);
+background: linear-gradient(to bottom, rgba($color, 0) 0%, rgba($color, $op) 41%, rgba(26,26,26,1) 100%);
+
+ }
+
+ @mixin overlayGradient {
+     background: rgba(0,0,0,0);
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 31%, rgba(0,0,0,0.32) 55%, rgba(26,26,26,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(31%, rgba(0,0,0,0)), color-stop(55%, rgba(0,0,0,0.32)), color-stop(100%, rgba(26,26,26,0.91)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 31%, rgba(0,0,0,0.32) 55%, rgba(26,26,26,1) 100%);
+background: -o-linear-gradient(top, rgba(0,0,0,0) 31%, rgba(0,0,0,0.32) 55%, rgba(26,26,26,1) 100%);
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 31%, rgba(0,0,0,0.32) 55%, rgba(26,26,26,1) 100%);
+background: linear-gradient(to bottom, rgba(0,0,0,0) 31%, rgba(0,0,0,0.32) 55%, rgba(26,26,26,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1a1a1a', GradientType=0 );
+
+@include breakpoint(medium down) {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 65%, rgba(0,0,0,0.32) 89%, rgba(26,26,26,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(65%, rgba(0,0,0,0)), color-stop(55%, rgba(0,0,0,0.32)), color-stop(100%, rgba(26,26,26,0.91)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 65%, rgba(0,0,0,0.32) 89%, rgba(26,26,26,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 65%, rgba(0,0,0,0.32) 89%, rgba(26,26,26,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 65%, rgba(0,0,0,0.32) 89%, rgba(26,26,26,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 65%, rgba(0,0,0,0.32) 89%, rgba(26,26,26,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1a1a1a', GradientType=0 );
+}
+ }
+
+
+ // Gradient OVERLAY with top and bottom parameters
+ @mixin gradientOverlay2($color, $topop, $bottomop) {
+    background: -ms-linear-gradient(top, rgba($color, $topop) 0%, rgba($color, $bottomop) 100%);
+    background: -moz-linear-gradient(top, rgba($color, $topop) 0%, rgba($color, $bottomop) 100%);
+    background: -o-linear-gradient(top, rgba($color, $topop) 0%, rgba($color, $bottomop) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba($color, $topop)), color-stop(100, rgba($color, $bottomop)));
+    background: -webkit-linear-gradient(top, rgba($color, $topop) 0%, rgba($color, $bottomop) 100%);
+    background: linear-gradient(to bottom, rgba($color, $topop) 0%, rgba($color, $bottomop) 100%);
+ }
+
+
+ // Gradient Overlay Horizontally
+@mixin gradientOverlayHoriz {
+    background: rgba(0,0,0,0.75);
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.69) 25%, rgba(0,0,0,0.5) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.75)), color-stop(25%, rgba(0,0,0,0.69)), color-stop(100%, rgba(0,0,0,0.5)));
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.69) 25%, rgba(0,0,0,0.5) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.69) 25%, rgba(0,0,0,0.5) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.69) 25%, rgba(0,0,0,0.5) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.69) 25%, rgba(0,0,0,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+}
+
+// Cross-browser opacity
+ @mixin opacity($opacity) {
+   opacity: $opacity;
+   $opacity-ie: $opacity * 100;
+   filter: alpha(opacity=$opacity-ie); //IE8
+ }
+
+
+// Comment Count Bubble
+ @mixin ccbubble($color) {
+     $cl: darken($color, 5%);
+     background-color: $cl;
+     font-weight: bold;
+
+     &:after {
+         @include halftri(top, right, 8px, $cl);
+     }
+
+     &:hover, &:active {
+         background-color: lighten($cl, 5%);
+         color: $clr-white;
+
+         &:after {
+             border-top-color: lighten($cl, 5%);
+         }
+     }
+ }
+
+
+// clearfix
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin cfx {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+@function top-shadow($depth) {
+  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+  $color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+
+@function bottom-shadow($depth) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 6, $depth) * 4px;
+  $color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+@mixin material-bottom-shadow($depth) {
+
+    @if $depth < 1 {
+        box-shadow: none;
+    } @else if $depth > 5 {
+        @warn "too deep!";
+    } @else {
+        box-shadow: bottom-shadow($depth);
+    }
+}
+
+@mixin material-top-shadow($depth) {
+    @if $depth < 1 {
+        box-shadow: none;
+    } @else if $depth > 5 {
+        @warn "too deep!";
+    } @else {
+        box-shadow: top-shadow($depth);
+    }
+}
+
+
+@mixin material-card($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "too deep!";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+
+@mixin bckd {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    @include cfx;
+}
+
+@mixin ellips {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin _transition($args...) {
+    -webkit-transition: $args;
+	   -moz-transition: $args;
+		 -o-transition: $args;
+		    transition: $args;
+}
+
+@mixin blurred($px) {
+    filter: blur($px);
+    -webkit-filter: blur($px);
+       -moz-filter: blur($px);
+         -o-filter: blur($px);
+        -ms-filter: blur($px);
+}
